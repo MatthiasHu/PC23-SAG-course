@@ -120,7 +120,7 @@
         Y = 0
       \end{cases}\]
       \center%
-      \begin{tikzpicture}[domain=-1.1:1.1]
+      \begin{tikzpicture}[scale=1.5,domain=-1.1:1.1]
         \draw[very thin,color=lightgray,step=0.5] (-1.1,-1.1) grid (1.1,1.1);
         \draw plot (0,\x);
         \draw plot (\x,0);
@@ -135,12 +135,12 @@
         Y = 0
       \end{cases}\]
       \center%
-      \begin{tikzpicture}[domain=-1.1:1.1]
+      \begin{tikzpicture}[scale=1.5,domain=-1.1:1.1]
         \draw[very thin,color=lightgray,step=0.5] (-1.1,-1.1) grid (1.1,1.1);
         \draw plot (\x,\x*\x);
         \draw plot (\x,0);
         \path<3-> (0,0) node[red,circle,fill,inner sep=1.5pt]{};
-        \draw<3->[red,line width=2pt] (-0.2,0) -- (0.2,0);
+        \draw<3->[red,line width=2pt] (-0.15,0) -- (0.15,0);
       \end{tikzpicture}
       \center%
       \uncover<3->{an \enquote{infinitesimally thickened} point}
