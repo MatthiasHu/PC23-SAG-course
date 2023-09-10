@@ -24,7 +24,7 @@
 
 \begin{frame}
   \frametitle{What is synthetic algebraic geometry?}
-  \onslide<1>{\begin{description}[synthetic algebraic geometry]
+  \only<1>{\begin{description}[synthetic algebraic geometry]
     \item[algebraic geometry]
       Thinking about algebra in geometric terms.
     \item[synthetic algebraic geometry]
@@ -32,14 +32,21 @@
       using a \alert{special language} that makes complex constructions look simple.
   \end{description}}
 
-  \onslide<2>{
-  Thinking about algebra\\
-  in geometric terms.
+  \only<2->{\center\begin{tikzpicture}
+    % need align=* for line breaks
+    \node[above,align=center] at (0,0) (start) {Thinking about algebra\\in geometric terms.};
 
-  (non-synthetic)\\
-  algebraic geometry
+    \node<2>[circle,draw,inner sep=1.2cm] at (-4,-3) (left) {};
+    \node<3>[circle,draw,inner sep=2.5cm] at (-4,-3) (left) {};
+    \node[align=center] at (left) {(non-synthetic)\\algebraic geometry};
+    \node<2>[circle,draw,inner sep=1.2cm] at (4,-3) (right) {};
+    \node<3>[circle,draw,inner sep=0.1cm] at (4,-3) (right) {};
+    \node<2>[align=center] at (right) {synthetic\\algebraic geometry};
+    \path<3> (right.south) node[below,align=center]{synthetic\\algebraic geometry};
 
-  synthetic\\algebraic geometry}
+    \draw[->,shorten >=2pt] (start) -- (left);
+    \draw[->,shorten >=2pt] (start) -- (right);
+  \end{tikzpicture}}
 \end{frame}
 
 \begin{frame}
@@ -97,6 +104,7 @@
 
 \begin{frame}
   \frametitle{$\Spec(A)$ does not faithfully represent $A$}
+  $X^2 = 0$
 \end{frame}
 
 \begin{frame}
