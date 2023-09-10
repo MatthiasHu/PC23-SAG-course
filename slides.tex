@@ -2,6 +2,9 @@
 
 \usepackage{./util/zariski}
 
+\usepackage{csquotes}
+\usepackage{tikz}
+
 \usetheme{Hannover}
 % \usecolortheme{crane}
 \setbeamertemplate{navigation symbols}{}
@@ -80,7 +83,42 @@
 \begin{frame}
   \frametitle{Understanding algebraic subtleties geometrically}
 
-  How is $X^2 = 0$ different from $X = 0$ geometrically?
+  How is $X = 0$ different from $X^2 = 0$ geometrically?
+  \bigskip
+
+  \begin{columns}<2->
+    \begin{column}{.5\textwidth}
+      \[\begin{cases}
+        X = 0 \\
+        Y = 0
+      \end{cases}\]
+      \center%
+      \begin{tikzpicture}[domain=-1.1:1.1]
+        \draw[very thin,color=lightgray,step=0.5] (-1.1,-1.1) grid (1.1,1.1);
+        \draw plot (0,\x);
+        \draw plot (\x,0);
+        \path<3-> (0,0) node[red,circle,fill,inner sep=1.5pt]{};
+      \end{tikzpicture}
+      \center%
+      \uncover<3->{a point}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \[\begin{cases}
+        X^2 - Y = 0 \\
+        Y = 0
+      \end{cases}\]
+      \center%
+      \begin{tikzpicture}[domain=-1.1:1.1]
+        \draw[very thin,color=lightgray,step=0.5] (-1.1,-1.1) grid (1.1,1.1);
+        \draw plot (\x,\x*\x);
+        \draw plot (\x,0);
+        \path<3-> (0,0) node[red,circle,fill,inner sep=1.5pt]{};
+        \draw<3->[red,line width=2pt] (-0.2,0) -- (0.2,0);
+      \end{tikzpicture}
+      \center%
+      \uncover<3->{an \enquote{infinitesimally thickened} point}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
