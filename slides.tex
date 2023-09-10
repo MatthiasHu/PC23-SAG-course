@@ -24,29 +24,43 @@
 
 \begin{frame}
   \frametitle{What is synthetic algebraic geometry?}
-  \only<1>{\begin{description}[synthetic algebraic geometry]
+
+  \begin{description}[synthetic algebraic geometry]
     \item[algebraic geometry]
       Thinking about algebra in geometric terms.
     \item[synthetic algebraic geometry]
       Thinking about algebra in geometric terms,\\
       using a \alert{special language} that makes complex constructions look simple.
-  \end{description}}
+  \end{description}
+  \bigskip
+  \pause%
+  \begin{itemize}
+    \item
+      language: homotopy type theory (HoTT) + special axioms
+    \item
+      model: Zariski $\infty$-topos
+  \end{itemize}
+\end{frame}
 
-  \only<2->{\center\begin{tikzpicture}
+\begin{frame}
+  \frametitle{What is synthetic algebraic geometry?}
+
+  \center%
+  \begin{tikzpicture}
     % need align=* for line breaks
     \node[above,align=center] at (0,0) (start) {Thinking about algebra\\in geometric terms.};
 
-    \node<2>[circle,draw,inner sep=1.2cm] at (-4,-3) (left) {};
-    \node<3>[circle,draw,inner sep=2.5cm] at (-4,-3) (left) {};
+    \node<1>[circle,draw,inner sep=1.2cm] at (-4,-3) (left) {};
+    \node<2>[circle,draw,inner sep=2.5cm] at (-4,-3) (left) {};
     \node[align=center] at (left) {(non-synthetic)\\algebraic geometry};
-    \node<2>[circle,draw,inner sep=1.2cm] at (4,-3) (right) {};
-    \node<3>[circle,draw,inner sep=0.1cm] at (4,-3) (right) {};
-    \node<2>[align=center] at (right) {synthetic\\algebraic geometry};
-    \path<3> (right.south) node[below,align=center]{synthetic\\algebraic geometry};
+    \node<1>[circle,draw,inner sep=1.2cm] at (4,-3) (right) {};
+    \node<2>[circle,draw,inner sep=0.1cm] at (4,-3) (right) {};
+    \node<1>[align=center] at (right) {synthetic\\algebraic geometry};
+    \path<2> (right.south) node[below,align=center]{synthetic\\algebraic geometry};
 
     \draw[->,shorten >=2pt] (start) -- (left);
     \draw[->,shorten >=2pt] (start) -- (right);
-  \end{tikzpicture}}
+  \end{tikzpicture}
 \end{frame}
 
 \begin{frame}
@@ -148,8 +162,10 @@
   \end{columns}
 \end{frame}
 
+\section{The axiom SQC}
+
 \begin{frame}
-  \frametitle{The axiom (SQC)}
+  \frametitle{The axiom SQC}
 \end{frame}
 
 \begin{frame}
