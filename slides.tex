@@ -25,21 +25,36 @@
 \begin{frame}
   \frametitle{What is synthetic algebraic geometry?}
 
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+%      \flushright{$X^3 + X^2 - Y^2 = 0$}
+      \[ X^3 + X^2 - Y^2 = 0 \]
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{tikzpicture}[scale=1.5,domain=-1.0:0.8,samples=101]
+        \draw[very thin,color=lightgray,step=0.5] (-1.1,-1.1) grid (1.1,1.1);
+        \draw plot (\x,{ sqrt(abs(\x*\x + \x*\x*\x))});
+        \draw plot (\x,{-sqrt(abs(\x*\x + \x*\x*\x))});
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+  \bigskip
   \begin{description}[synthetic algebraic geometry]
     \item[algebraic geometry]
       Thinking about algebra in geometric terms.
-    \item[synthetic algebraic geometry]
+    \item<2->[synthetic algebraic geometry]
       Thinking about algebra in geometric terms,\\
       using a \alert{special language} that makes complex constructions look simple.
   \end{description}
+
   \bigskip
-  \pause%
-  \begin{itemize}
+  \uncover<2->{\begin{itemize}
     \item
       language: homotopy type theory (HoTT) + special axioms
     \item
       model: Zariski $\infty$-topos
-  \end{itemize}
+  \end{itemize}}
 \end{frame}
 
 \begin{frame}
