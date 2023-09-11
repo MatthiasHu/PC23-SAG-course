@@ -55,7 +55,7 @@
   \bigskip
   \uncover<2->{\begin{itemize}
     \item
-      language: homotopy type theory (HoTT) + special axioms
+      language: homotopy type theory (HoTT) + three special axioms
     \item
       model: Zariski $\infty$-topos
   \end{itemize}}
@@ -73,7 +73,7 @@
     \node<2>[circle,draw,inner sep=2.5cm] at (-4,-3) (left) {};
     \node[align=center] at (left) {(non-synthetic)\\algebraic geometry};
     \node<1>[circle,draw,inner sep=1.2cm] at (4,-3) (right) {};
-    \node<2>[circle,draw,inner sep=0.1cm] at (4,-3) (right) {};
+    \node<2>[circle,draw,inner sep=0.05cm] at (4,-3) (right) {};
     \node<1>[align=center] at (right) {synthetic\\algebraic geometry};
     \path<2> (right.south) node[below,align=center]{synthetic\\algebraic geometry};
 
@@ -120,17 +120,50 @@
       apply homotopy type theory
     \item
       understand some algebraic geometry
+    \item
+      philosophically interesting phenomena
   \end{itemize}
+
+  \bigskip
+  \bigskip
+  \center{\textit{Ask questions any time!}}
 \end{frame}
 
 \section{The spectrum of an algebra}
 
 \begin{frame}
-  \frametitle{Review of basic abstract algebra}
+  \frametitle{Review of algebra}
 
-  \emph{ring}?
-  \emph{algebra}?
+  \begin{description}
+    \item[ring]
+      a set $R$ with $0, 1 : R$ and ${+}, {\cdot} : R \times R \to R$ such that:
+      \begin{itemize}
+        \item
+          $+$ and $\cdot$ are associative, commutative, with unit $0$ resp.\ $1$
+        \item
+          $\cdot$ distributes over $+$
+      \end{itemize}
+      {\usebeamercolor[fg]{example text}
+      e.g.\ %
+      $\mathbb{Z}$,
+      $\mathbb{R}$,
+      $\mathbb{C}$,
+      $\mathbb{Z}/(4)$,
+      $\mathbb{C}[X]$,
+      $\mathbb{C}[X, Y, Z]$,
+      \dots}
+    \item[$R$-algebra]
+      a ring $A$ equipped with a ring homomorphism $R \to A$\\
+      {\usebeamercolor[fg]{example text}
+      e.g.\ %
+      $R[X]$,
+      $R/(r)$,
+      $R[X, Y]/(X^3 + X^2 - Y^2)$,
+      \dots}
+  \end{description}
 
+  \bigskip
+  \bigskip
   An $R$-algebra $A$ is \emph{finitely presented} if
   \[ A = R[X_1, \dots, X_n]/(p_1, \dots, p_m) \rlap{.}\]
 \end{frame}
@@ -181,10 +214,38 @@
   \end{columns}
 \end{frame}
 
-\section{The axiom SQC}
+\section{The first two axioms}
 
 \begin{frame}
-  \frametitle{The axiom SQC}
+  \frametitle{The first axiom (Loc)}
+
+  \[ \Spec(\;R[X]/(X\cdot(X-1))\;) = \text{?} \]
+
+  \pause%
+  \bigskip
+  \begin{block}{Axiom (Loc)}
+    $R$ is a \emph{local} ring.
+    That is:
+    \begin{itemize}
+      \item
+        $0 \neq 1$
+      \item
+        For every $x : R$,
+        $x$ is invertible or $1 - x$ is invertible.
+    \end{itemize}
+  \end{block}
+
+  \bigskip
+  With (Loc) we have:
+  \[ \Spec(\;R[X]/(X\cdot(X-1))\;) = \{0, 1\} \]
+  \pause%
+  and also:
+  \[ \Spec(\;R[X]/((X-a_1)\cdot \dots \cdot(X-a_n))\;) = \{a_1, \dots, a_n\} \]
+  if all $a_i - a_j$ are invertible.
+\end{frame}
+
+\begin{frame}
+  \frametitle{The second axiom (SQC)}
 \end{frame}
 
 \begin{frame}
@@ -222,6 +283,10 @@
           with a \alert{cubical type theory} mode
       \end{itemize}
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Tangent space}
 \end{frame}
 
 \end{document}
