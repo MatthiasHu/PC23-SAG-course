@@ -26,16 +26,20 @@
   \frametitle{What is synthetic algebraic geometry?}
 
   \begin{columns}[c]
-    \begin{column}{0.5\textwidth}
+    \begin{column}{0.2\textwidth}
+    \end{column}
+    \begin{column}{0.3\textwidth}
 %      \flushright{$X^3 + X^2 - Y^2 = 0$}
       \[ X^3 + X^2 - Y^2 = 0 \]
     \end{column}
-    \begin{column}{0.5\textwidth}
-      \begin{tikzpicture}[scale=1.5,domain=-1.0:0.8,samples=101]
+    \begin{column}{0.3\textwidth}
+      \[\begin{tikzpicture}[scale=1.5,domain=-1.0:0.8,samples=101]
         \draw[very thin,color=lightgray,step=0.5] (-1.1,-1.1) grid (1.1,1.1);
         \draw plot (\x,{ sqrt(abs(\x*\x + \x*\x*\x))});
         \draw plot (\x,{-sqrt(abs(\x*\x + \x*\x*\x))});
-      \end{tikzpicture}
+      \end{tikzpicture}\]
+    \end{column}
+    \begin{column}{0.2\textwidth}
     \end{column}
   \end{columns}
 
