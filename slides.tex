@@ -20,6 +20,8 @@
   \maketitle
 \end{frame}
 
+\part{Lecture 1}
+
 \section{Overview}
 
 \begin{frame}
@@ -91,7 +93,7 @@
     \url{https://arxiv.org/abs/2307.00073}
   \end{block}
 
-  \begin{block}{People involved}
+  \begin{block}{Some people involved}
     Peter Arndt,
     Ingo Blechschmidt,
     Felix Cherubini,
@@ -152,6 +154,7 @@
       $\mathbb{C}[X]$,
       $\mathbb{C}[X, Y, Z]$,
       \dots}
+      \pause%
     \item[$R$-algebra]
       a ring $A$ equipped with a ring homomorphism $R \to A$\\
       {\usebeamercolor[fg]{example text}
@@ -162,10 +165,64 @@
       \dots}
   \end{description}
 
+  \pause%
   \bigskip
   \bigskip
-  An $R$-algebra $A$ is \emph{finitely presented} if
+  An $R$-algebra $A$ is \emph{finitely presented} if:
   \[ A = R[X_1, \dots, X_n]/(p_1, \dots, p_m) \rlap{.}\]
+\end{frame}
+
+\begin{frame}
+  \frametitle{How are these systems of equations related?}
+
+  \begin{columns}
+    \begin{column}{0.25\textwidth}
+      \[\begin{cases}
+        X^2 + 1 = 0\\
+      \end{cases}\]
+    \end{column}
+    \begin{column}{0.25\textwidth}
+      \[\begin{cases}
+        X^2 + 1 = 0\\
+        X^3 + X = 0\\
+      \end{cases}\]
+    \end{column}
+    \begin{column}{0.25\textwidth}
+      \[\begin{cases}
+        X^2 + 1 = 0\\
+        Y = 0\\
+      \end{cases}\]
+    \end{column}
+    \begin{column}{0.25\textwidth}
+      \[\begin{cases}
+        Y^2 + 1 = 0\\
+        X = 0\\
+      \end{cases}\]
+    \end{column}
+  \end{columns}
+  \pause%
+  \begin{columns}
+    \begin{column}{0.25\textwidth}
+      \[ R[X]/(X^2+1) \]
+      \[\]
+    \end{column}
+    \begin{column}{0.25\textwidth}
+      \[\]
+      \[ R[X]/(X^2+1, X^3+X) \]
+    \end{column}
+    \begin{column}{0.25\textwidth}
+      \[ R[X, Y]/(X^2+1, Y) \]
+      \[\]
+    \end{column}
+    \begin{column}{0.25\textwidth}
+      \[\]
+      \[ R[X, Y]/(Y^2+1, X) \]
+    \end{column}
+  \end{columns}
+
+  \bigskip
+  \bigskip
+  These $R$-algebras are all isomorphic.
 \end{frame}
 
 \begin{frame}
@@ -248,6 +305,12 @@
   \frametitle{The second axiom (SQC)}
 \end{frame}
 
+\section{Schemes}
+
+\begin{frame}
+  \frametitle{Affine schemes}
+\end{frame}
+
 \begin{frame}
   \frametitle{Motivation for non-affine schemes}
 
@@ -262,8 +325,18 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Definition of scheme}
+\end{frame}
+
+\part{Lecture 2}
+
+\section{Line bundles}
+
+\begin{frame}
   \frametitle{Line bundles}
 \end{frame}
+
+\section{Computer formalization}
 
 \begin{frame}
   \frametitle{\includegraphics[width=5cm]{./images/agda-logo.png}}
