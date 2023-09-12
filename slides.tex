@@ -265,8 +265,39 @@
 \againframe<2>{DefSpec}
 
 \begin{frame}
-  \frametitle{$\Spec(A)$ does not faithfully represent $A$}
-  $X^2 = 0$
+  \[ \Spec(A) := \Hom_{\Alg{R}}(A, R) \]
+
+  \bigskip
+  \begin{example}
+    \begin{itemize}
+      \item
+        $\Spec(R) = \pause \{*\}$
+      \pause\item
+        $\Spec(R[X]) = \pause R \quad$ (as a set)
+      \pause\item
+        $\Spec(R[X_1, \dots, X_n]) = \pause R^n$
+      \pause\item
+        $\Spec(R/(a)) = \pause \{* \mid a = 0\}$
+      \pause\item
+        $\Spec(R[a^{-1}]) = \pause \{* \mid \text{$a$ is invertible}\}$
+    \end{itemize}
+  \end{example}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Does $\Spec(A)$ faithfully represent $A$?}
+  Let $R = \mathbb{Q}$.
+
+  \[ \Spec(\mathbb{Q}[X]/(X)) = \{0\} = \Spec(\mathbb{Q}[X]/(X^2))\]
+
+  \bigskip
+  But the algebras are not isomorphic:
+  \begin{itemize}
+    \item
+      $\mathbb{Q}[X]/(X) \cong \mathbb{Q}$
+    \item
+      $\mathbb{Q}[X]/(X^2) = \{ aX + b \mid a, b : \mathbb{Q}\}$
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
