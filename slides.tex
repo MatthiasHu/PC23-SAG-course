@@ -378,7 +378,7 @@
 \end{frame}
 
 \begin{frame}[fragile] % fragile for tikzcd
-  \frametitle{The axiom of synthetic quasi-coherence (SQC)}
+  \frametitle{The axiom of \enquote{synthetic quasi-coherence} (SQC)}
   \begin{block}{Axiom (SQC)}
     For every finitely presented $R$-algebra $A$,
     the map
@@ -391,7 +391,32 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{First consequences}
+  \frametitle{Miraculous consequences}
+
+  \[A \xrightarrow{\cong} R^{\Spec(A)} \rlap{\qquad\qquad \text{(SQC)}}\]
+
+  \pause%
+  \begin{corollary}
+    $R[X] = R^{\Spec(R[X])} = R^R$
+  \end{corollary}
+  \pause%
+  \alert{All functions are polynomials!}
+
+  \pause%
+  \begin{corollary}
+    $R/(a) = R^{\Spec(R/(a))} = R^{(a = 0)}$\\
+    So if $a \neq 0$, then $R/(a) = R^{\varnothing} = 0$ and $a$ is invertible.
+  \end{corollary}
+  \pause%
+  \alert{$R$ is a field! ($a \neq 0 \leftrightarrow \text{$a$ invertible}$)}
+
+  \pause%
+  \begin{corollary}
+    Set $\D_1 := \{x : R \mid x^2 = 0\}$. Then:\\
+    $R^{\D_1} = R^{\Spec(R[X]/(X^2))} = R[X]/(X^2) = \{ aX + b \mid a, b : R \}$
+  \end{corollary}
+  \pause%
+  \alert{$R$ has infinitesimally small elements!}
 \end{frame}
 
 \part{Lecture 2}
