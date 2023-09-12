@@ -4,6 +4,7 @@
 
 \usepackage{csquotes}
 \usepackage{tikz}
+\usepackage{tikz-cd}
 
 \usetheme{Hannover}
 % \usecolortheme{crane}
@@ -91,6 +92,11 @@
     F. Cherubini, T. Coquand, M. Hutzler,
     \textit{A Foundation for Synthetic Algebraic Geometry}\\
     \url{https://arxiv.org/abs/2307.00073}
+  \end{block}
+
+  \begin{block}{Computer formalization}
+    in cubical Agda, very very incomplete\\
+    \url{https://github.com/felixwellen/synthetic-geometry}
   \end{block}
 
   \begin{block}{Some people involved}
@@ -371,9 +377,24 @@
   if all $a_i - a_j$ are invertible.
 \end{frame}
 
-\begin{frame}
-  \frametitle{The second axiom (SQC)}
+\begin{frame}[fragile] % fragile for tikzcd
+  \frametitle{The axiom of synthetic quasi-coherence (SQC)}
+  \begin{block}{Axiom (SQC)}
+    For every finitely presented $R$-algebra $A$,
+    the map
+    \[\begin{tikzcd}[row sep=0pt]
+      A \ar[r] & R^{\Spec(A)} \\
+      a \ar[r, mapsto] & (\varphi \mapsto \varphi(a))
+    \end{tikzcd}\]
+    is bijective.
+  \end{block}
 \end{frame}
+
+\begin{frame}
+  \frametitle{First consequences}
+\end{frame}
+
+\part{Lecture 2}
 
 \section{Schemes}
 
@@ -397,8 +418,6 @@
 \begin{frame}
   \frametitle{Definition of scheme}
 \end{frame}
-
-\part{Lecture 2}
 
 \section{Line bundles}
 
