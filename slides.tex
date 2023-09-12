@@ -21,8 +21,6 @@
   \maketitle
 \end{frame}
 
-\part{Lecture 1}
-
 \section{Overview}
 
 \begin{frame}
@@ -350,34 +348,6 @@
 
 \section{The first two axioms}
 
-\begin{frame}
-  \frametitle{The first axiom (Loc)}
-
-  \[ \Spec(\;R[X]/(X\cdot(X-1))\;) = \text{?} \]
-
-  \pause%
-  \bigskip
-  \begin{block}{Axiom (Loc)}
-    $R$ is a \emph{local} ring.
-    That is:
-    \begin{itemize}
-      \item
-        $0 \neq 1$
-      \item
-        For every $x : R$,
-        $x$ is invertible or $1 - x$ is invertible.
-    \end{itemize}
-  \end{block}
-
-  \bigskip
-  With (Loc) we have:
-  \[ \Spec(\;R[X]/(X\cdot(X-1))\;) = \{0, 1\} \]
-  \pause%
-  and also:
-  \[ \Spec(\;R[X]/((X-a_1)\cdot \dots \cdot(X-a_n))\;) = \{a_1, \dots, a_n\} \]
-  if all $a_i - a_j$ are invertible.
-\end{frame}
-
 \begin{frame}[fragile] % fragile for tikzcd
   \frametitle{The axiom of \enquote{synthetic quasi-coherence} (SQC)}
   \begin{block}{Axiom (SQC)}
@@ -420,7 +390,35 @@
   \alert{$R$ has infinitesimally small elements!}
 \end{frame}
 
-\part{Lecture 2}
+\begin{frame}
+  \frametitle{The local-ring axiom (Loc)}
+
+  \[ \Spec(\;R[X]/(X\cdot(X-1))\;) = \text{?} \]
+
+  \pause%
+  \bigskip
+  \begin{block}{Axiom (Loc)}
+    $R$ is a \emph{local} ring.
+    That is:
+    \begin{itemize}
+      \item
+        $0 \neq 1$
+      \item
+        For every $x : R$,
+        $x$ is invertible or $1 - x$ is invertible.
+    \end{itemize}
+  \end{block}
+
+  \bigskip
+  With (Loc) we have:
+  \[ \Spec(\;R[X]/(X\cdot(X-1))\;) = \{0, 1\} \]
+  \pause%
+  and also:
+  \[ \Spec(\;R[X]/((X-a_1)\cdot \dots \cdot(X-a_n))\;) = \{a_1, \dots, a_n\} \]
+  if all $a_i - a_j$ are invertible.
+\end{frame}
+
+\appendix
 
 \section{Schemes}
 
