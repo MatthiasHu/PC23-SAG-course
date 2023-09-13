@@ -5,7 +5,7 @@
 \usepackage{csquotes}
 \usepackage{tikz}
 \usepackage{tikz-cd}
-\usetikzlibrary{decorations.pathmorphing,shapes}
+\usetikzlibrary{decorations.pathmorphing,shapes,3d}
 
 \usetheme{Hannover}
 % \usecolortheme{crane}
@@ -396,6 +396,7 @@
   \frametitle{The local-ring axiom (Loc)}
 
   \[ \Spec(\;R[X]/(X\cdot(X-1))\;) = \text{?} \]
+  \[ x \cdot (x-1) = 0 \quad \Rightarrow \quad \text{?} \]
 
   \pause%
   \bigskip
@@ -420,12 +421,28 @@
   if all $a_i - a_j$ are invertible.
 \end{frame}
 
-\appendix
+\begin{frame}
+  \frametitle{More consequences}
+\end{frame}
 
 \section{Schemes}
 
 \begin{frame}
   \frametitle{Affine schemes}
+
+  \pause%
+  \begin{definition}
+    A set (or type) $X$ is an \emph{affine scheme} if
+    \[ X = \Spec(A) \]
+    for some finitely presented $R$-algebra $A$.
+  \end{definition}
+
+  \pause%
+  \bigskip
+  \begin{block}{Fun fact}
+    We can reconstruct $A$ from the set $X$: $A = R^X$\\
+    (By the axiom (SQC).)
+  \end{block}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -476,10 +493,33 @@
 \begin{frame}
   \frametitle{Projective space}
 
-  We want to consider the \alert{space of all ratios} $[x : y : z]$
-  for $x, y, z : R$.\\
-  \pause%
-  This is called \emph{projective space}:
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \[ X^3 + X^2Z - Y^2Z = 0 \]
+      \[\begin{tikzpicture}[scale=1.0,domain=-1.0:1.4,samples=101]
+        \begin{scope}[canvas is xy plane at z=-1]
+          \draw[very thin,color=lightgray] (-2.2,-2.2) grid (2.2,2.2);
+          \draw[thick] plot (\x,{ sqrt(abs(\x*\x + \x*\x*\x))});
+          \draw[thick] plot (\x,{-sqrt(abs(\x*\x + \x*\x*\x))});
+        \end{scope}
+
+        \draw[dotted,thick] (-1,-2.2,-1) -- (-1,2.2,-1);
+        \begin{scope}[canvas is zy plane at x=-1]
+          \draw[very thin,color=lightgray] (-2.2,-2.2) grid (2.2,2.2);
+          \draw[thick,domain= 0.25: 2.2,samples=51] plot (\x,{ sqrt(abs((1 + \x)/\x))});
+          \draw[thick,domain= 0.25: 2.2,samples=51] plot (\x,{-sqrt(abs((1 + \x)/\x))});
+          \draw[thick,domain=-2.20:-1.0,samples=51] plot (\x,{ sqrt(abs((1 + \x)/\x))});
+          \draw[thick,domain=-2.20:-1.0,samples=51] plot (\x,{-sqrt(abs((1 + \x)/\x))});
+        \end{scope}
+
+      \end{tikzpicture}\]
+    \end{column}
+
+    \pause%
+    \begin{column}{0.5\textwidth}
+      The space of ratios $[x_1 : \dots : x_{n+1}]$ is called \emph{projective $n$-space}:
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -487,6 +527,30 @@
 \end{frame}
 
 \section{Line bundles}
+
+\begin{frame}
+  \frametitle{Review of algebra (cont'd)}
+
+  \begin{description}
+    \item[$R$-module]
+      just like a vector space, except that $R$ need not be a field\\
+      ${+} : M \times M \to M$, ${\cdot} : R \times M \to M$\\
+      {\usebeamercolor[fg]{example text}
+      e.g.\ %
+      $R^n$,
+      \dots}
+      \pause%
+    \bigskip
+    \item[$\Hom(M, N)$]
+      set of linear maps
+      --- is itself a module!
+      \pause%
+    \bigskip
+    \item[$M \otimes N$]
+      has elements $x_1 \otimes y_1 + \dots + x_k \otimes y_k$ with $x_i : M$, $y_i : N$,\\
+      have canonical map $M \otimes \Hom(M, N) \to N$
+  \end{description}
+\end{frame}
 
 \begin{frame}
   \frametitle{Line bundles}
