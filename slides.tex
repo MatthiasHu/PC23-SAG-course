@@ -275,7 +275,7 @@
   \[ \Spec(A) := \Hom_{\Alg{R}}(A, R) \]
 
   \bigskip
-  \begin{example}
+  \begin{exampleblock}{Examples}
     \begin{itemize}
       \item
         $\Spec(R) = \pause \{*\}$
@@ -288,7 +288,7 @@
       \pause\item
         $\Spec(R[a^{-1}]) = \pause \{* \mid \text{$a$ is invertible}\} = (\text{$a$ is invertible})$
     \end{itemize}
-  \end{example}
+  \end{exampleblock}
 \end{frame}
 
 \begin{frame}
@@ -361,6 +361,18 @@
     \end{tikzcd}\]
     is bijective.
   \end{block}
+
+  \pause%
+  \begin{block}{Reformulations}
+    \begin{itemize}
+      \item
+        The functor $\Spec : \Alg{R}_{\mathrm{fp}}^{\mathrm{op}} \to \mathrm{Set}$ is fully faithful.
+      \pause%
+      \item
+        We can identify elements of $A$ with functions $\Spec(A) \to R$.\\
+        For $f : A$, $p : \Spec(A)$, write $f(p)$ instead of $p(f)$.
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \begin{frame}
@@ -424,7 +436,13 @@
 \begin{frame}
   \frametitle{More consequences}
 
+  gen field prop
+
   alg closed
+
+  R connected
+
+  boundedness
 \end{frame}
 
 \section{Schemes}
@@ -432,19 +450,41 @@
 \begin{frame}
   \frametitle{Affine schemes}
 
-  \pause%
-  \begin{definition}
-    A set (or type) $X$ is an \emph{affine scheme} if
-    \[ X = \Spec(A) \]
-    for some finitely presented $R$-algebra $A$.
-  \end{definition}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \pause%
+      \begin{definition}
+        A set (or type) $X$ is an \emph{affine scheme} if
+        \[ X = \Spec(A) \]
+        for some finitely presented $R$-algebra $A$.
+      \end{definition}
 
-  \pause%
-  \bigskip
-  \begin{block}{Fun fact}
-    We can reconstruct $A$ from the set $X$: $A = R^X$\\
-    (By the axiom (SQC).)
-  \end{block}
+      \pause%
+      \bigskip
+      \begin{block}{Fun fact}
+        We can reconstruct $A$ from the set $X$:\\
+        $A = R^X$\\
+        (By the axiom (SQC).)
+      \end{block}
+    \end{column}
+
+    \pause%
+    \begin{column}{0.5\textwidth}
+      \begin{exampleblock}{Examples}
+        \begin{itemize}
+          \item
+            $\Spec(R[X_1, \dots, X_n]) = R^n$
+          \item
+            $\Spec(R/(a)) = (a = 0)$
+          \item
+            $\Spec(R[a^{-1}]) = (\text{$a$ is invertible})$
+          \pause%
+          \item
+            $\Spec(R[X][X^{-1}]) = \pause R^\times = R \setminus \{0\}$
+        \end{itemize}
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]
