@@ -5,7 +5,7 @@
 \usepackage{csquotes}
 \usepackage{tikz}
 \usepackage{tikz-cd}
-\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.pathmorphing,shapes}
 
 \usetheme{Hannover}
 % \usecolortheme{crane}
@@ -440,13 +440,11 @@
       \end{tikzpicture}\]
     \end{column}
     \begin{column}{0.6\textwidth}
-      \[\begin{tikzcd}[column sep=-40pt,row sep=40pt]
-        X^3 + X^2 - Y^2 = 0 & &
-        1 + Z - Y^2Z = 0 \\
-        & X^3 + X^2Z - Y^2Z = 0
-        \ar[ul,rightsquigarrow,"Z = 1"]
-        \ar[ur,rightsquigarrow,"X = 1"']
-      \end{tikzcd}\]
+      \[
+        X^3 + X^2 - Y^2 = 0
+        \qquad \qquad
+        1 + Z - Y^2Z = 0
+      \]
     \end{column}
     \begin{column}{0.2\textwidth}
       \[\begin{tikzpicture}[scale=0.5]
@@ -459,6 +457,20 @@
     \end{column}
   \end{columns}
 
+  \pause%
+  \[\begin{tikzpicture}
+    \path (0,0) (start) node{$X^3 + X^2Z - Y^2Z = 0$};
+    \draw[->,decorate,decoration={snake,post length=1pt}]
+      (start) -- (-1, 2) node[midway,left]{\small$Z=1$\;\;};
+    \draw[->,decorate,decoration={snake,post length=1pt}]
+      (start) -- (1, 2) node[midway,right]{\small\;\;$X=1$};
+  \end{tikzpicture}\]
+
+  \bigskip
+  \pause%
+  This is a \alert{homogenous} equation.\\
+  \pause%
+  Its solutions are best described as \alert{ratios} $[x : y : z]$.
 \end{frame}
 
 \begin{frame}
