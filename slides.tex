@@ -5,6 +5,7 @@
 \usepackage{csquotes}
 \usepackage{tikz}
 \usepackage{tikz-cd}
+\usetikzlibrary{decorations.pathmorphing}
 
 \usetheme{Hannover}
 % \usecolortheme{crane}
@@ -427,17 +428,46 @@
   \frametitle{Affine schemes}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{A secret connection between two equations}
+
+  \begin{columns}
+    \begin{column}{0.2\textwidth}
+      \[\begin{tikzpicture}[scale=0.5,domain=-1.0:1.4,samples=101]
+        \draw[very thin,color=lightgray] (-2.2,-2.2) grid (2.2,2.2);
+        \draw plot (\x,{ sqrt(abs(\x*\x + \x*\x*\x))});
+        \draw plot (\x,{-sqrt(abs(\x*\x + \x*\x*\x))});
+      \end{tikzpicture}\]
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \[\begin{tikzcd}[column sep=-40pt,row sep=40pt]
+        X^3 + X^2 - Y^2 = 0 & &
+        1 + Z - Y^2Z = 0 \\
+        & X^3 + X^2Z - Y^2Z = 0
+        \ar[ul,rightsquigarrow,"Z = 1"]
+        \ar[ur,rightsquigarrow,"X = 1"']
+      \end{tikzcd}\]
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \[\begin{tikzpicture}[scale=0.5]
+        \draw[very thin,color=lightgray] (-2.2,-2.2) grid (2.2,2.2);
+        \draw[domain= 0.25: 2.2,samples=51] plot (\x,{ sqrt(abs((1 + \x)/\x))});
+        \draw[domain= 0.25: 2.2,samples=51] plot (\x,{-sqrt(abs((1 + \x)/\x))});
+        \draw[domain=-2.20:-1.0,samples=51] plot (\x,{ sqrt(abs((1 + \x)/\x))});
+        \draw[domain=-2.20:-1.0,samples=51] plot (\x,{-sqrt(abs((1 + \x)/\x))});
+      \end{tikzpicture}\]
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
 \begin{frame}
-  \frametitle{Motivation for non-affine schemes}
+  \frametitle{Projective space}
 
-  \begin{example}
-    The two equations
-
-    are equivalent:
-  \end{example}
-
-  We want to consider the space of all \alert{ratios} $[x : y : z]$
-  for $x, y, z : R$.
+  We want to consider the \alert{space of all ratios} $[x : y : z]$
+  for $x, y, z : R$.\\
+  \pause%
+  This is called \emph{projective space}:
 \end{frame}
 
 \begin{frame}
@@ -474,6 +504,17 @@
 
 \begin{frame}
   \frametitle{Tangent space}
+\end{frame}
+
+\section{Model}
+
+\begin{frame}
+  \frametitle{A model of the axioms (simplified)}
+
+  Let $K$ be an (external) ring.
+
+  \bigskip
+  $\mathrm{ZAR_K} := \Sh(\Alg{K}_{\mathrm{fp}}, J_{\mathrm{ZAR}})$
 \end{frame}
 
 \end{document}
