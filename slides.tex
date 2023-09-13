@@ -423,6 +423,8 @@
 
 \begin{frame}
   \frametitle{More consequences}
+
+  alg closed
 \end{frame}
 
 \section{Schemes}
@@ -502,22 +504,33 @@
           \draw[thick] plot (\x,{ sqrt(abs(\x*\x + \x*\x*\x))});
           \draw[thick] plot (\x,{-sqrt(abs(\x*\x + \x*\x*\x))});
         \end{scope}
-
-        \draw[dotted,thick] (-1,-2.2,-1) -- (-1,2.2,-1);
         \begin{scope}[canvas is zy plane at x=-1]
-          \draw[very thin,color=lightgray] (-2.2,-2.2) grid (2.2,2.2);
-          \draw[thick,domain= 0.25: 2.2,samples=51] plot (\x,{ sqrt(abs((1 + \x)/\x))});
-          \draw[thick,domain= 0.25: 2.2,samples=51] plot (\x,{-sqrt(abs((1 + \x)/\x))});
-          \draw[thick,domain=-2.20:-1.0,samples=51] plot (\x,{ sqrt(abs((1 + \x)/\x))});
-          \draw[thick,domain=-2.20:-1.0,samples=51] plot (\x,{-sqrt(abs((1 + \x)/\x))});
+          \draw[very thin,color=green!50!white] (-2.2,-2.2) grid (2.2,2.2);
+          \draw[thick,color=green!50!black,domain= 0.25: 2.2,samples=51] plot (\x,{ sqrt(abs((1 + \x)/\x))});
+          \draw[thick,color=green!50!black,domain= 0.25: 2.2,samples=51] plot (\x,{-sqrt(abs((1 + \x)/\x))});
+          \draw[thick,color=green!50!black,domain=-2.20:-1.0,samples=51] plot (\x,{ sqrt(abs((1 + \x)/\x))});
+          \draw[thick,color=green!50!black,domain=-2.20:-1.0,samples=51] plot (\x,{-sqrt(abs((1 + \x)/\x))});
         \end{scope}
+        \draw[dotted,thick] (-1,-2.2,-1) -- (-1,2.2,-1);
 
+        \pause%
+        \begin{scope}[canvas is xz plane at y=-1]
+          \draw[very thin,color=blue!50!white] (-2.2,-2.2) grid (2.2,2.2);
+          \draw[thick,color=blue!50!black,domain=-0.85:0.85,samples=51] plot (\x,{(\x^3)/(\x*\x - 1)});
+        \end{scope}
+        \draw[dotted,thick] (-2.2,-1,-1) -- (2.2,-1,-1);
+        \draw[dotted,thick] (-1,-1,-2.2) -- (-1,-1,2.2);
       \end{tikzpicture}\]
     \end{column}
 
-    \pause%
-    \begin{column}{0.5\textwidth}
+    \begin{column}{0.5\textwidth}<3->
       The space of ratios $[x_1 : \dots : x_{n+1}]$ is called \emph{projective $n$-space}:
+
+      \bigskip
+      \begin{definition}
+        \[ \bP^n := (R^{n+1}\setminus\{0\}) / {\sim} \]
+        where $x \sim y :\Leftrightarrow \exists a {:} R.\; ax = y$.
+      \end{definition}
     \end{column}
   \end{columns}
 \end{frame}
