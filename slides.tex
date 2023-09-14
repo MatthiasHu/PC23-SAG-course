@@ -7,6 +7,8 @@
 \usepackage{tikz-cd}
 \usetikzlibrary{decorations.pathmorphing,shapes,3d}
 
+\newtheorem{proposition}{Proposition}
+
 \usetheme{Hannover}
 % \usecolortheme{crane}
 \setbeamertemplate{navigation symbols}{}
@@ -449,9 +451,9 @@
   \end{proof}
 
   \pause%
-  \begin{corollary}
+  \begin{proposition}
     Every non-constant polynomial $P : R[X]$ does not not have a root.
-  \end{corollary}
+  \end{proposition}
   \begin{proof}
     \pause%
     $P = a_nX^n + \dots + a_1X + a_0$\\
@@ -469,9 +471,65 @@
 \begin{frame}
   \frametitle{Geometric consequences}
 
-  R connected
+  \begin{proposition}
+    Every function $R \to \mathrm{Bool}$ is constant.
+  \end{proposition}
+  \begin{proof}
+    \pause%
+    $R \to \mathrm{Bool}
+    \quad\rightsquigarrow\quad R \to \{0, 1\} \subseteq R
+    \quad\rightsquigarrow\quad P : R[X]$\\
+    \pause%
+    with, say, $P(0) = 0$ and $P \cdot P = P$.\\
+    \pause%
+    But then $P = X\widetilde{P}$, \pause%
+    $P = X^2\widetilde{\widetilde{P}}$, \dots$\quad$ So $P = 0$.
+  \end{proof}
 
-  boundedness
+  \pause%
+  \begin{lemma}
+    $\Spec(A) \times \Spec(B) = \Spec(A \otimes B)$
+  \end{lemma}
+  \begin{proof}
+    By the universal property of $\otimes$ (coproduct of $R$-algebras).
+  \end{proof}
+
+  \pause%
+  \begin{theorem}
+    Every function $\Spec(A) \to \N$ is bounded.
+  \end{theorem}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Geometric consequences}
+
+  \begin{proposition}
+    Every function $R \to \mathrm{Bool}$ is constant.
+  \end{proposition}
+
+  \begin{lemma}
+    $\Spec(A) \times \Spec(B) = \Spec(A \otimes B)$
+  \end{lemma}
+
+  \begin{theorem}
+    Every function $\Spec(A) \to \N$ is bounded.
+  \end{theorem}
+  \begin{proof}
+    Let $\Spec(A) \to \N,\, p \mapsto n_p$ be given.\\
+    \pause%
+    Define $f : \Spec(A) \to R[X],\, p \mapsto X^{n_p}$.\\
+    \pause%
+    $R[X]^{\Spec(A)} = \pause
+    (R^{\Spec(R[X])})^{\Spec(A)} = \pause
+    R^{\Spec(R[X]) \times \Spec(A)} = \pause
+    R^{\Spec(R[X] \otimes \Spec(A))} =$\\
+    \pause%
+    $R^{\Spec(A[X])} = \pause A[X]$\\
+    \pause%
+    $\rightsquigarrow\quad$ $f : A[X]$\\
+    \pause%
+    A bound on the degree of $f$ is a bound on all $n_p$.
+  \end{proof}
 \end{frame}
 
 \section{Schemes}
