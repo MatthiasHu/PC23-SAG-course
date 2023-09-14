@@ -522,7 +522,7 @@
     $R[X]^{\Spec(A)} = \pause
     (R^{\Spec(R[X])})^{\Spec(A)} = \pause
     R^{\Spec(R[X]) \times \Spec(A)} = \pause
-    R^{\Spec(R[X] \otimes \Spec(A))} =$\\
+    R^{\Spec(R[X] \otimes A)} =$\\
     \pause%
     $R^{\Spec(A[X])} = \pause A[X]$\\
     \pause%
@@ -672,40 +672,58 @@
         \[ (\text{$a_1$ is invertible}) \lor \dots \lor (\text{$a_n$ is invertible}) \]
         for some $a_1, \dots, a_n : R$.
       \end{definition}
+
+      \begin{definition}<2->
+        A subset $U \subseteq X$ is \emph{open} if the proposition $x \in U$ is open for all $x : X$.
+      \end{definition}
+
+      \begin{definition}<4->
+        A set (or type) $X$ is a \emph{scheme} if there are open subsets $U_i \subseteq X$ such that
+        \begin{itemize}
+          \item
+            $X = \bigcup_{i=1}^n U_i$
+          \item
+            Every $U_i$ is an affine scheme.
+        \end{itemize}
+      \end{definition}
     \end{column}
+
     \begin{column}{0.5\textwidth}
+      \only<3-4>{\begin{exampleblock}{Examples}
+        \begin{itemize}
+          \item
+            Is $\{0\} \subset R$ open?\\
+            No: $(x \in \{0\}) = (x = 0)$
+          \item
+            $R\setminus\{0\} \subseteq R$ is open:\\
+            $(x \in R\setminus\{0\}) = (\text{$x$ is invertible})$
+          \item
+            Let $f : A$.\\
+            $D(f) := \{x : \Spec(A) \mid \text{$f(x)$ is invertible}\} \subseteq \Spec(A)$
+            is open.
+        \end{itemize}
+      \end{exampleblock}}
+
+      \only<5->{\begin{theorem}
+          $\bP^n$ is a scheme.
+      \end{theorem}
+      \begin{proof}
+        \[ \bP^n := R^{n+1}\setminus\{0\}/{\sim} \]
+        Define $U_i \subseteq \bP^n$ by:
+        \[ [x] \in U_i :\Leftrightarrow \text{$x_i$ is invertible} \]
+        These are:
+        \begin{itemize}
+          \item
+            well-defined subsets
+          \item
+            open subsets
+          \item
+            covering: $\bP^n = \bigcup_{i=1}^{n+1} U_i$
+        \end{itemize}
+        $U_i \cong R^n = \Spec(R[X_1, \dots, X_n])$
+      \end{proof}}
     \end{column}
   \end{columns}
-\end{frame}
-
-\section{Line bundles}
-
-\begin{frame}
-  \frametitle{Review of algebra (cont'd)}
-
-  \begin{description}
-    \item[$R$-module]
-      just like a vector space, except that $R$ need not be a field\\
-      ${+} : M \times M \to M$, ${\cdot} : R \times M \to M$\\
-      {\usebeamercolor[fg]{example text}
-      e.g.\ %
-      $R^n$,
-      \dots}
-      \pause%
-    \bigskip
-    \item[$\Hom(M, N)$]
-      set of linear maps
-      --- is itself a module!
-      \pause%
-    \bigskip
-    \item[$M \otimes N$]
-      has elements $x_1 \otimes y_1 + \dots + x_k \otimes y_k$ with $x_i : M$, $y_i : N$,\\
-      have canonical map $M \otimes \Hom(M, N) \to N$
-  \end{description}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Line bundles}
 \end{frame}
 
 \section{Computer formalization}
@@ -743,6 +761,38 @@
 
   \bigskip
   $\mathrm{ZAR_K} := \Sh(\Alg{K}_{\mathrm{fp}}, J_{\mathrm{ZAR}})$
+\end{frame}
+
+\appendix
+
+\section{Line bundles}
+
+\begin{frame}
+  \frametitle{Review of algebra (cont'd)}
+
+  \begin{description}
+    \item[$R$-module]
+      just like a vector space, except that $R$ need not be a field\\
+      ${+} : M \times M \to M$, ${\cdot} : R \times M \to M$\\
+      {\usebeamercolor[fg]{example text}
+      e.g.\ %
+      $R^n$,
+      \dots}
+      \pause%
+    \bigskip
+    \item[$\Hom(M, N)$]
+      set of linear maps
+      --- is itself a module!
+      \pause%
+    \bigskip
+    \item[$M \otimes N$]
+      has elements $x_1 \otimes y_1 + \dots + x_k \otimes y_k$ with $x_i : M$, $y_i : N$,\\
+      have canonical map $M \otimes \Hom(M, N) \to N$
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Line bundles}
 \end{frame}
 
 \end{document}
