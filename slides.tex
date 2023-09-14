@@ -753,10 +753,28 @@
 \begin{frame}
   \frametitle{A model of the axioms (simplified)}
 
+  We forget about:
+  \begin{itemize}
+    \item
+      HoTT
+    \item
+      everything except first-order formulas
+  \end{itemize}
+
+  \pause%
+  \bigskip
   Let $K$ be an (external) ring.
 
   \bigskip
-  $\mathrm{ZAR_K} := \Sh(\Alg{K}_{\mathrm{fp}}, J_{\mathrm{ZAR}})$
+  The model is the topos
+  \[\mathrm{ZAR_K} := \Sh(\Alg{K}_{\mathrm{fp}}, J_{\mathrm{ZAR}}) \rlap{.}\]
+
+  \bigskip
+  $M, N, \ldots : \Alg{K}_{\mathrm{fp}}$ $\qquad$--- \enquote{stages}
+
+  \bigskip
+  $M$ is \enquote{covered} by $(M \to M[x_i^{-1}])_i$\\
+  whenever $(x_1, \dots, x_n) = (1)$.
 \end{frame}
 
 \appendix
