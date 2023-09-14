@@ -434,11 +434,40 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{More consequences}
+  \frametitle{Algebraic consequences}
 
-  gen field prop
+  \begin{corollary}
+    Every non-zero vector $x : R^n$ has an invertible entry.\\
+  \end{corollary}
+  \begin{proof}
+    \pause%
+    $x \neq 0$ means $\Spec(R/(x_1, \dots, x_n)) = \varnothing$.\\
+    \pause%
+    So $R/(x_1, \dots, x_n) = R^\varnothing = 0$, so $1 \in (x_1, \dots, x_n)$.\\
+    \pause%
+    Using (Loc), this implies $\exists i. (\text{$x_i$ is invertible})$.
+  \end{proof}
 
-  alg closed
+  \pause%
+  \begin{corollary}
+    Every non-constant polynomial $P : R[X]$ does not not have a root.
+  \end{corollary}
+  \begin{proof}
+    \pause%
+    $P = a_nX^n + \dots + a_1X + a_0$\\
+    \pause%
+    We are proving a negated statement, so we can assume $a_i = 0 \lor a_i \neq 0$ for all $i$.\\
+    \pause%
+    So $P = a_kX^k + \dots + a_1X + a_0$ with $a_k$ invertible.\\
+    \pause%
+    Thus $R[X]/(P) \cong R^k \neq 0$\\
+    \pause%
+    and $\Spec(R[X]/(P)) \neq \varnothing$.
+  \end{proof}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Geometric consequences}
 
   R connected
 
